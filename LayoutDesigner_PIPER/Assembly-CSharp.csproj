@@ -65,7 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\LayoutDesignerBase\Scripts\LD_Controller.cs" />
     <Compile Include="Assets\LayoutDesignerBase\Scripts\LD_LayoutData.cs" />
-    <Compile Include="Assets\LayoutDesignerBase\Scripts\LD_Line.cs" />
+    <Compile Include="Assets\LayoutDesignerBase\Scripts\LD_Room.cs" />
     <Compile Include="Assets\LayoutDesignerBase\Scripts\LD_StaticPoint.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>G:/DevFolder/PIPER/LayoutDesigner_WIP/LayoutDesigner_PIPER/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
