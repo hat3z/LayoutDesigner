@@ -12,6 +12,7 @@ public class LD_Controller : MonoBehaviour
 
     public static LD_Controller Instance;
 
+    public LD_LayoutData MainData;
     
     private void Awake()
     {

@@ -6,30 +6,39 @@ using UnityEngine;
 public class LD_LayoutData
 {
 
-    public class RoomData
-    {
-
-    }
-
-
-
-    public class LayoutPoint
-    {
-        public int x;
-        public int y;
-
-        public LayoutPoint(int _x, int _y)
-        {
-            x = _x;
-            y = _y;
-        }
-
-    }
-
-    public class LayoutWall
-    {
-        public LayoutPoint startPoint;
-        public LayoutPoint endPoint;
-    }   
+    public List<RoomData> Rooms;
 
 }
+
+[System.Serializable]
+public class RoomData
+{
+    public string roomName;
+    public int ID;
+    public List<LayoutWall> Walls;
+}
+
+[System.Serializable]
+public class LayoutPoint
+{
+    public int ID;
+    public int x;
+    public int y;
+
+    public LayoutPoint(int _x, int _y)
+    {
+        x = _x;
+        y = _y;
+    }
+
+}
+
+[System.Serializable]
+public class LayoutWall
+{
+    public string wallName;
+    public int ID;
+    public LayoutPoint startPoint;
+    public LayoutPoint endPoint;
+}
+
