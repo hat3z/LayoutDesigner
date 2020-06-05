@@ -32,13 +32,20 @@ public class LD_Room : MonoBehaviour
             {
                 mousePosition = Input.mousePosition;
 
-                //Convert the mousePosition according to World position
-                targetPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 10f));
+                targetPosition = Camera.main.ScreenToWorldPoint(
+                    new Vector3(
+                        mousePosition.x, 
+                        mousePosition.y, 
+                        10f));
 
-                //Set the position of targetObject
+                if(LD_Controller.Instance.useSnap)
+                {
+                    targetPosition.x = Mathf.FloorToInt(targetPosition.x + .5f);
+                    targetPosition.y = Mathf.FloorToInt(targetPosition.y + .5f);
+                }
 
                 StaticPoint.transform.position = targetPosition;
-                //If Left Button is clicked
+
                 if (Input.GetMouseButtonUp(0))
                 {
                     //create the instance of targetObject and place it at given position.
@@ -75,6 +82,8 @@ public class LD_Room : MonoBehaviour
             Vector3 basePos = basePoints[i].transform.position;
             basePointsArray[i] = new Vector3(basePos.x, basePos.y);
         }
+
+        // Close lines.
         if(basePoints.Count != 3)
         {
             lineRenderer.loop = true;
@@ -83,6 +92,8 @@ public class LD_Room : MonoBehaviour
         {
             lineRenderer.loop = false;
         }
+
+        // Fill up the positions list.
         lineRenderer.SetPositions(basePointsArray);
     }
 

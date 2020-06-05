@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LayoutDesignerBase\Scripts\LayoutGrid.cs" />
     <Compile Include="Assets\LayoutDesignerBase\Scripts\LD_Controller.cs" />
     <Compile Include="Assets\LayoutDesignerBase\Scripts\LD_LayoutData.cs" />
     <Compile Include="Assets\LayoutDesignerBase\Scripts\LD_Room.cs" />

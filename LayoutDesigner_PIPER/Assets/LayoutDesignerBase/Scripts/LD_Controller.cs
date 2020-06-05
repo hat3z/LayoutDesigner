@@ -13,7 +13,7 @@ public class LD_Controller : MonoBehaviour
     GameObject activePoint;
     GameObject newRoom;
     float distance = 10f;
-
+    public bool useSnap;
     [Header("Wrappers")]
     public Transform RoomsWrapper;
     public Transform PointsWrapper;
@@ -111,7 +111,7 @@ public class LD_Controller : MonoBehaviour
 
             // Creating StaticPoint Helper to the cursor
             GameObject _pointHelper = Instantiate(StaticPointPrefab);
-            _pointHelper.transform.SetParent(PointsWrapper);
+            _pointHelper.transform.SetParent(tempUIWrapper);
             _pointHelper.transform.localScale = new Vector3(1, 1, 1);
             activePoint = _pointHelper;
 
@@ -127,6 +127,7 @@ public class LD_Controller : MonoBehaviour
         {
             activePoint = null;
         }
+        Destroy(tempUIWrapper.transform.GetChild(0).gameObject);
     }
     void CreateStaticPointHelperToCursor(GameObject _point)
     {
@@ -134,7 +135,13 @@ public class LD_Controller : MonoBehaviour
         mousePosition = Input.mousePosition;
 
         //Convert the mousePosition according to World position
-        targetPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, distance));
+        targetPosition = Camera.main.ScreenToWorldPoint(new Vector3(Mathf.FloorToInt(mousePosition.x), Mathf.FloorToInt(mousePosition.y), distance));
+
+        if(useSnap)
+        {
+            targetPosition.x = Mathf.FloorToInt(targetPosition.x + .5f);
+            targetPosition.y = Mathf.FloorToInt(targetPosition.y + .5f);
+        }
 
         //Set the position of targetObject
         _point.transform.position = targetPosition;

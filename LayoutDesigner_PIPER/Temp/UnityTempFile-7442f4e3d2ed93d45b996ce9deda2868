@@ -295,6 +295,8 @@
 /define:ENABLE_VSTU
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
+Assets\Grid.cs
+Assets\LayoutDesignerBase\Scripts\LayoutGrid.cs
 Assets\LayoutDesignerBase\Scripts\LD_Controller.cs
 Assets\LayoutDesignerBase\Scripts\LD_LayoutData.cs
 Assets\LayoutDesignerBase\Scripts\LD_Room.cs
