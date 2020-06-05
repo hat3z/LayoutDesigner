@@ -26,8 +26,9 @@ public class LayoutPoint
     public int x;
     public int y;
 
-    public LayoutPoint(int _x, int _y)
+    public LayoutPoint(int _ID, int _x, int _y)
     {
+        ID = _ID;
         x = _x;
         y = _y;
     }
@@ -38,14 +39,20 @@ public class LayoutPoint
 public class LayoutWall
 {
     public string WallName;
-    public int ID;
+    public string ID;
     public LayoutPoint startPoint;
     public LayoutPoint endPoint;
 
-    public LayoutWall (string _name, LayoutPoint _s, LayoutPoint _e)
+
+    public void AssignStartPoint(string _n ,LayoutPoint _s, string _ID)
     {
-        WallName = _name;
+        WallName = _n;
         startPoint = _s;
+        ID = _ID;
+    }
+
+    public void AssignEndPoint(LayoutPoint _e)
+    {
         endPoint = _e;
     }
 

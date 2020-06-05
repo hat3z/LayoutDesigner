@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class LD_StaticPoint : MonoBehaviour
+using UnityEngine.EventSystems;
+public class LD_StaticPoint : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 
     public bool isSelected;
@@ -18,4 +18,16 @@ public class LD_StaticPoint : MonoBehaviour
     {
         
     }
+
+    public void OnPointerDown(PointerEventData e)
+    {
+        Debug.Log("asd");
+        isSelected = true;
+    }
+
+    public void OnPointerUp(PointerEventData e)
+    {
+        isSelected = false;
+    }
+
 }
