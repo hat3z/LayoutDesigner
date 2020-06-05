@@ -99,19 +99,5 @@ public class LD_Room : MonoBehaviour
         isDrawingNewRoom = true;
     }
 
-    public void CreateWalls(GameObject _pos)
-    {
-        if(basePoints.Count != 3)
-        {
-            GameObject staticPoint = Instantiate(StaticPoint);
-            staticPoint.transform.SetParent(LD_Controller.Instance.PointsWrapper);
-            staticPoint.transform.localScale = new Vector3(1, 1, 1);
-
-            basePoints.Add(_pos);
-        }
-
-        DrawBaseLayout();
-    }
-
 
 }
