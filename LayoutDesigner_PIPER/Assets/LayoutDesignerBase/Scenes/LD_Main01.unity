@@ -1142,6 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9398064556ead0d41934622c4683eec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useSnap: 0
   RoomsWrapper: {fileID: 48280791}
   PointsWrapper: {fileID: 2013659649}
   tempUIWrapper: {fileID: 2029684468}
@@ -1150,7 +1151,11 @@ MonoBehaviour:
     type: 3}
   MainData:
     LayoutName: TestLayout
-    Rooms: []
+    Rooms:
+    - RoomName: 
+      ID: 
+      Walls: []
+      Points: []
 --- !u!4 &1367445723
 Transform:
   m_ObjectHideFlags: 0
