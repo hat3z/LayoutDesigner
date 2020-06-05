@@ -13,11 +13,13 @@ public class LD_Room : MonoBehaviour
     [Space(10)]
     [SerializeField] private List<GameObject> basePoints = new List<GameObject>();
 
-
+    //RoomData
+    RoomData myRoomData;
     // Start is called before the first frame update
     void Start()
     {
         DrawBaseLayout();
+        myRoomData = new RoomData(StringRandomizer.Instance.GetRandomString(10));
     }
 
     // Update is called once per frame
@@ -44,12 +46,16 @@ public class LD_Room : MonoBehaviour
                     staticPoint.transform.SetParent(LD_Controller.Instance.PointsWrapper);
                     staticPoint.transform.localScale = new Vector3(1, 1, 1);
                     basePoints.Add(staticPoint);
+                    myRoomData.Points.Add(new LayoutPoint(basePoints.Count + 1, 
+                        staticPoint.GetComponent<RectTransform>().transform.localPosition.x, 
+                        staticPoint.GetComponent<RectTransform>().transform.localPosition.y));
                 }
             }
             else
             {
                 isDrawingNewRoom = false;
                 LD_Controller.Instance.ClearNewRoom();
+                LD_Controller.Instance.MainData.AddRoomData(myRoomData);
             }
         }
 

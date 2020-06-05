@@ -24,8 +24,6 @@ public class LD_Controller : MonoBehaviour
     public GameObject StaticPointPrefab;
 
     [Space(10)]
-
-
     public LD_LayoutData MainData;
 
 

@@ -8,25 +8,44 @@ public class LD_LayoutData
     public string LayoutName;
     public List<RoomData> Rooms;
 
+    public void AddRoomData(RoomData _roomData)
+    {
+        Rooms.Add(_roomData);
+    }
+
 }
 
 [System.Serializable]
 public class RoomData
 {
     public string RoomName;
-    public int ID;
-    public List<LayoutWall> Walls;
-    public List<LayoutPoint> Points;
+    public string ID;
+    public List<LayoutWall> Walls = new List<LayoutWall>();
+    public List<LayoutPoint> Points = new List<LayoutPoint>();
+
+    public RoomData(string _ID)
+    {
+        ID = _ID;
+    }
+    public void AddPoints(List<LayoutPoint> layoutPoints)
+    {
+        for (int i = 0; i < layoutPoints.Count; i++)
+        {
+            Debug.Log(layoutPoints[i]);
+            Points.Add(layoutPoints[i]);
+        }
+    }
+
 }
 
 [System.Serializable]
 public class LayoutPoint
 {
     public int ID;
-    public int x;
-    public int y;
+    public float x;
+    public float y;
 
-    public LayoutPoint(int _ID, int _x, int _y)
+    public LayoutPoint(int _ID, float _x, float _y)
     {
         ID = _ID;
         x = _x;
