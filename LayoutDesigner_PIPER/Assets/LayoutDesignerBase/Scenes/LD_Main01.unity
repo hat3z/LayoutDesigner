@@ -651,6 +651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb23cb7d837007344a60cab9e3aca2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useSnap: 1
+  cursorOffset: 0.5
+  gridSnapSize: 10
   rows: 25
   cols: 25
   gridSize: {x: 25, y: 25}
@@ -1142,7 +1145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9398064556ead0d41934622c4683eec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useSnap: 0
+  useSnap: 1
   RoomsWrapper: {fileID: 48280791}
   PointsWrapper: {fileID: 2013659649}
   tempUIWrapper: {fileID: 2029684468}
@@ -1329,6 +1332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb23cb7d837007344a60cab9e3aca2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useSnap: 0
+  cursorOffset: 0
+  gridSnapSize: 0
   rows: 0
   cols: 0
   gridSize: {x: 0, y: 0}

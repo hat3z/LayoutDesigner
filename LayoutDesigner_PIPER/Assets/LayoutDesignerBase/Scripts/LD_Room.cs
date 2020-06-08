@@ -38,10 +38,10 @@ public class LD_Room : MonoBehaviour
                         mousePosition.y, 
                         10f));
 
-                if(LD_Controller.Instance.useSnap)
+                if(LayoutGrid.Instance.useSnap)
                 {
-                    targetPosition.x = Mathf.FloorToInt(targetPosition.x + .5f);
-                    targetPosition.y = Mathf.FloorToInt(targetPosition.y + .5f);
+                    targetPosition.x = Mathf.FloorToInt(targetPosition.x + LayoutGrid.Instance.cursorOffset);
+                    targetPosition.y = Mathf.FloorToInt(targetPosition.y + LayoutGrid.Instance.cursorOffset);
                 }
 
                 StaticPoint.transform.position = targetPosition;

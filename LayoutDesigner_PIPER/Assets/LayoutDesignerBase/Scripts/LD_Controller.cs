@@ -137,10 +137,10 @@ public class LD_Controller : MonoBehaviour
         //Convert the mousePosition according to World position
         targetPosition = Camera.main.ScreenToWorldPoint(new Vector3(Mathf.FloorToInt(mousePosition.x), Mathf.FloorToInt(mousePosition.y), distance));
 
-        if(useSnap)
+        if(LayoutGrid.Instance.useSnap)
         {
-            targetPosition.x = Mathf.FloorToInt(targetPosition.x + .5f);
-            targetPosition.y = Mathf.FloorToInt(targetPosition.y + .5f);
+            targetPosition.x = Mathf.FloorToInt(targetPosition.x + LayoutGrid.Instance.cursorOffset);
+            targetPosition.y = Mathf.FloorToInt(targetPosition.y + LayoutGrid.Instance.cursorOffset);
         }
 
         //Set the position of targetObject

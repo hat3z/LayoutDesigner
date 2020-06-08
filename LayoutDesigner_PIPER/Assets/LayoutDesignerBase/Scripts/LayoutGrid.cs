@@ -7,6 +7,12 @@ public class LayoutGrid : MonoBehaviour
 {
     public static LayoutGrid Instance;
 
+    [Header("Main Settings")]
+    public bool useSnap;
+    public float cursorOffset;
+    public float gridSnapSize;
+
+    [Header("Sub Settings")]
     [SerializeField]
     private int rows;
     [SerializeField]
@@ -15,12 +21,12 @@ public class LayoutGrid : MonoBehaviour
     private Vector2 gridSize;
     [SerializeField]
     private Vector2 gridOffset;
-
-
     public GameObject GridPoint;
     public Transform GridWrapper;
     private Vector2 cellSize;
     private Vector2 cellScale;
+
+
 
     private void Awake()
     {
