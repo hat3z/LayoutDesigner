@@ -32,11 +32,14 @@ public class LayoutGrid : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+        GridWrapper = GameObject.Find("GridWrapper").transform;
+
     }
 
-    private void Start()
+    public void Start()
     {
         GenerateGrid();
+
     }
 
     public void RefreshGrid()
@@ -66,14 +69,22 @@ public class LayoutGrid : MonoBehaviour
         {
             for (int col = 0; col < cols; col++)
             {
-                Vector2 pos = new Vector2(col * cellSize.x + gridOffset.x + transform.position.x, row * cellSize.y + gridOffset.y + transform.position.y);
+                Vector2 pos = new Vector2(col * cellSize.x + gridOffset.x, row * cellSize.y + gridOffset.y );
                 GameObject cO = Instantiate(GridPoint, pos, Quaternion.identity) as GameObject;
                 cO.transform.SetParent(GridWrapper);
                 cO.transform.localScale = new Vector3(1, 1, 1);
 
             }
         }
+        FixZPos();
+    }
 
+    void FixZPos()
+    {
+        GridWrapper.GetComponent<RectTransform>().position = new Vector3(
+            GridWrapper.GetComponent<RectTransform>().position.x,
+            GridWrapper.GetComponent<RectTransform>().position.y,
+            10);
     }
 
 }

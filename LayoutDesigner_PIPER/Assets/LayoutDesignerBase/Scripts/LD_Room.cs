@@ -18,7 +18,6 @@ public class LD_Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DrawBaseLayout();
         myRoomData = new RoomData(StringRandomizer.Instance.GetRandomString(10));
     }
 
