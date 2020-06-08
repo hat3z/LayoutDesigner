@@ -1,0 +1,1 @@
+- custom image creator for the rooms. The custom image will be the background of the room. [HEAVY]
