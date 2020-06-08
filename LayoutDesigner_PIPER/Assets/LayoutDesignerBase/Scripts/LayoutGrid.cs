@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+
 public class LayoutGrid : MonoBehaviour
 {
     public static LayoutGrid Instance;
 
     [Header("Main Settings")]
     public bool useSnap;
-    public float cursorOffset = .5f;
+    public float cursorOffset;
     public float gridSnapSize;
 
     [Header("Sub Settings")]
@@ -73,12 +74,6 @@ public class LayoutGrid : MonoBehaviour
             }
         }
 
-    }
-
-    public float GetCursorOffset()
-    {
-        float offset = cursorOffset + gridSnapSize;
-        return offset;
     }
 
 }

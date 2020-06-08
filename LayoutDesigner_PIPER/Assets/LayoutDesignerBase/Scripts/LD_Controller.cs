@@ -37,7 +37,7 @@ public class LD_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //DrawLayout();
+        DrawLayout();
     }
 
     // Update is called once per frame
@@ -117,7 +117,6 @@ public class LD_Controller : MonoBehaviour
 
         }
     }
-
     public void ClearNewRoom()
     {
         if(newRoom != null)
@@ -141,17 +140,11 @@ public class LD_Controller : MonoBehaviour
         if(LayoutGrid.Instance.useSnap)
         {
             targetPosition.x = Mathf.FloorToInt(targetPosition.x + LayoutGrid.Instance.cursorOffset);
-
             targetPosition.y = Mathf.FloorToInt(targetPosition.y + LayoutGrid.Instance.cursorOffset);
-
-            _point.transform.position = targetPosition;
-
-            Debug.Log(targetPosition.x + ";" + targetPosition.y);
         }
-        else
-        {        
-            _point.transform.position = targetPosition;
-        }
+
+        //Set the position of targetObject
+        _point.transform.position = targetPosition;
 
     }
     #endregion
